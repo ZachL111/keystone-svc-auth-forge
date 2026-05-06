@@ -1,0 +1,17 @@
+{
+  "repo": "keystone-svc-auth-forge",
+  "thresholds": {
+    "signal": 3,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 3,
+    "ship": 189,
+    "watch": 102
+  },
+  "terms": [
+    "queue pressure",
+    "retry load",
+    "worker slack",
+    "session drift"
+  ]
+}

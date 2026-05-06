@@ -63,3 +63,9 @@ kotlinc src/main/kotlin/Policy.kt src/main/kotlin/DomainReview.kt tests/PolicyTe
 java -jar build/test.jar
 
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-keystone-svc-auth-detail.ps1
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-keystone-svc-auth-properties.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-keystone-svc-auth-golden.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
