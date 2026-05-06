@@ -1,0 +1,73 @@
+{
+  "repo": "keystone-svc-auth-forge",
+  "language": "Kotlin",
+  "category": "Backend services",
+  "goal": "Design a Kotlin verification harness for auth systems, covering security rule linting, safe and unsafe fixtures, and failure-oriented tests.",
+  "review_model": {
+    "terms": [
+      "queue pressure",
+      "retry load",
+      "worker slack",
+      "session drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "queue pressure",
+      "signal": 77,
+      "slack": 50,
+      "drag": 10,
+      "confidence": 54,
+      "score": 228,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "retry load",
+      "signal": 78,
+      "slack": 54,
+      "drag": 26,
+      "confidence": 59,
+      "score": 191,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "worker slack",
+      "signal": 60,
+      "slack": 33,
+      "drag": 24,
+      "confidence": 61,
+      "score": 142,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "session drift",
+      "signal": 86,
+      "slack": 36,
+      "drag": 24,
+      "confidence": 74,
+      "score": 210,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "queue pressure",
+      "signal": 77,
+      "slack": 34,
+      "drag": 22,
+      "confidence": 77,
+      "score": 199,
+      "lane": "ship"
+    }
+  ]
+}
